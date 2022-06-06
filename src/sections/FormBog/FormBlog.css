@@ -1,0 +1,280 @@
+.form {
+    margin-top: 160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-about {
+    border-radius: 60px;
+    padding: 90px 80px 0 80px;
+    height: 717px;
+    position: relative;
+}
+.form-about__text {
+    font-size: 76px;
+    line-height: 112px;
+}
+
+.form-about__img {
+    position: absolute;
+    bottom: -4px;
+    left: 320px
+}
+
+.form-form {
+    border-radius: 60px;
+    padding: 47px 80px 30px 80px;
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+
+}
+
+.form__item:first-child {
+    margin-top: 0;
+}
+
+.form__label {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.form__input {
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 60px;
+    padding: 15px 20px;
+    margin-top: 5px;
+    border: solid 1px #000;
+}
+
+.form__input::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.select {
+    appearance: none;
+
+}
+.select-row {
+    position: relative;
+}
+.select-row::after {
+    content: ' ';
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    display: block;
+    right: 20px;
+    bottom: 0;
+    transform: translateY(35px);
+    background: url('../../img/form/Icon.svg') no-repeat right;
+}
+
+
+.form__description {
+    font-size: 14px;
+    line-height: 17px;
+    color: #7A7A7A;
+    margin-top: 20px;
+}
+
+.form__description span {
+    text-decoration: underline;
+}
+
+.form__submit {
+    width: 100%;
+    margin-top: 40px;
+    padding: 35px 200px;
+    border-radius: 60px;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 29px;
+    font-family: Helvetica Now Display Regular;
+}
+
+.asnwer__item__container_setting {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+/* MEDIA */
+
+@media screen and (max-width: 1400px) {
+    .form {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        margin-top: 80px;
+    }
+
+    .form-form {
+        padding: 40px;
+
+    }
+
+    .form-about {
+        padding: 40px;
+        height: auto;
+        padding-top: 180px;
+
+
+    }
+    .form-about__text {
+        font-size: 4rem;
+
+    }
+
+    .form-about__img {
+        transform: rotate(180deg) translateX(110px) translateY(170px);
+        left: 50%;
+        top: 0;
+    }
+
+    .form-about__img img {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .form {
+        gap: 20px;
+    }
+    .form-about__text {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .form-about {
+        min-width: 200px;
+    }
+
+    .form-form {
+        min-width: 200px;
+    }
+    .form__submit {
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    .form__submit {
+        padding: 40px;
+    }
+
+    .form-about  {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 680px) {
+    .form-form {
+        border-radius: 20px;
+    }
+
+    .form__input {
+        border-radius: 20px;
+        font-size: 1rem;
+    }
+    .form__input::placeholder {
+        font-size: 0.8rem;
+        line-height:normal
+    }
+
+    .form__submit {
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    select {
+        font-size: 0.8rem;
+        line-height:normal
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .form__input::placeholder {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+
+    .select {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+}
+
+.blog {
+    margin-top: 100px;
+}
+
+.blog__title {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.asnwer__item {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.asnwer__item__title {
+    margin-bottom: 10px;
+    font-weight : bold
+}
+
+.blog-setting {
+    display: flex;
+}
+.blog__setting__el {
+    flex-grow: 1;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-top: 5px;
+    border: solid 1px #000;
+    background-color: #fff;
+}
+
+.blog__search {
+    flex-grow: 2;
+}
+
+.blog__setting__el::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.blog-answer {
+    border-radius: 60px;
+    padding: 40px 20px;
+}
+
+.asnwer__item__date {
+    text-align: right;
+}
+
+.form__submit {
+    cursor: pointer;
+}
+

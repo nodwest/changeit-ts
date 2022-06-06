@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import './fonts.css'
 import './App.css';
+import Advantage from "./sections/Advantage/Advantage";
+import Header from "./sections/Header/Header";
+import PromoSecond from "./sections/PromoSecond/PromoSecond";
+import Questions from "./sections/Question/Question";
+import PromoFirst from "./sections/PromoFirst/PromoFirst";
+import PromoThree from "./sections/PromoThree/PromoThree";
+import FeedbackUser from "./sections/FeedbackUser/FeedbackUser";
+import Footer from "./sections/Footer/Footer";
+import FormBlog from "./sections/FormBog/FromBlog";
+import FormCheckList from "./sections/FormCheklist/FormChekList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className={'container-border'}>
+        <Header/>
+        <PromoFirst/>
+        <Advantage/>
+        <PromoSecond/>
+        <Questions/>
+        <PromoThree/>
+        <FeedbackUser/>
+        <FormBlog/>
+        <FormCheckList/>
+        <Footer/>
+      </div>
   );
 }
 
