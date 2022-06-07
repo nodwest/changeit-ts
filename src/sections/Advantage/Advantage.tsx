@@ -27,7 +27,6 @@ const Advantage = () => {
     return (
         <section id={'advantage'} className="advantage">
             <div className="advantage-container">
-
                 <AdvantageItem
                     title={'The whole world!'}
                     subTitle={'We work all over the world, so it doesnt matter where you are.'}
