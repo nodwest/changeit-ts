@@ -26,7 +26,7 @@ const FormBlog = () => {
         sortABC: 'abc',
         sortDate: 'abc',
     });
-    const [filteredAndSortedPosts, setFilteredAndSortedPosts] = useState([])
+    const [filteredAndSortedPosts, setFilteredAndSortedPosts] = useState<IBlogStatePosts[]>([])
     const newLocalBlogItem = {
         inputSearch: blogState.inputSearch,
         sortABC: blogState.sortABC,
