@@ -1,5 +1,6 @@
 import React from 'react';
 import './PromoThree.css'
+
 const PromoThree = () => {
     return (
         <section className="promo-three">

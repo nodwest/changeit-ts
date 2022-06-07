@@ -1,5 +1,5 @@
 import React from 'react';
-import handImg  from '../../img/promo/promo.svg'
+import handImg from '../../img/promo/promo.svg'
 import './PromoSecond.css'
 
 const PromoSecond = () => {

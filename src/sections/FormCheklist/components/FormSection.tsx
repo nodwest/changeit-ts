@@ -1,15 +1,16 @@
 import React, {FC, useState} from "react";
 import InputForm from "./InputForm";
 
-type TFormSection = {
+interface IStateIsFormSend  {
     setIsFormSend : (value:boolean)=> void
 }
 
-type TInputValue = {
-    ( field : { value : string }, setValue: React.Dispatch<React.SetStateAction<{value: string, errorText: string}>>) : void
+interface IStateInputBlockCheck {
+    value : string,
+    errorText : string
 }
 
-const FormSection : FC<TFormSection> = ({setIsFormSend} ) => {
+const FormSection : FC<IStateIsFormSend> = ({setIsFormSend} ) => {
 
     const [firstName, setFirstName] = useState({
         value: '',
@@ -31,7 +32,7 @@ const FormSection : FC<TFormSection> = ({setIsFormSend} ) => {
         errorText: ''
     })
 
-    const validateName : TInputValue = (field, setValue) => {
+    const validateName = <T extends IStateInputBlockCheck, R extends Function> (field : T, setValue : R) => {
         if (field.value === '') {
             setValue({
                 ...field,
@@ -120,7 +121,7 @@ const FormSection : FC<TFormSection> = ({setIsFormSend} ) => {
                 isError = true
             }
         })
-        if (isError === false) {
+        if (!isError) {
             const formData = new FormData(e.currentTarget);
             for (let data of formData.entries()) {
                 console.log(data)

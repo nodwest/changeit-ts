@@ -2,11 +2,11 @@ import React, {FC} from 'react';
 import {IBlogStatePosts} from "../FromBlog";
 
 interface PostRenderBlogProps {
-    posts : IBlogStatePosts[]
+    posts: IBlogStatePosts[]
     handleDeleteBlogPost: (id: number) => void
 }
 
-const PostRenderBlog :FC<PostRenderBlogProps>= ({posts, handleDeleteBlogPost}) => {
+const PostRenderBlog: FC<PostRenderBlogProps> = ({posts, handleDeleteBlogPost}) => {
     return (
         <>
             {posts.map(item => {

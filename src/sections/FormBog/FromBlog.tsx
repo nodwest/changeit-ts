@@ -15,8 +15,8 @@ export interface IBlogStatePosts {
 export interface IBlogState {
     posts: IBlogStatePosts[]
     inputSearch: string
-    sortABC: string
-    sortDate: string
+    sortABC: string | null
+    sortDate: string | null
     title: string
     text: string
     idPost: number
@@ -24,7 +24,7 @@ export interface IBlogState {
 
 const FormBlog = () => {
 
-    const initialBlogState : IBlogState = {
+    const [blogState, setBlogState] = useState<IBlogState>({
         posts: [],
         inputSearch: '',
         sortABC: 'abc',
@@ -32,9 +32,8 @@ const FormBlog = () => {
         title: '',
         text: '',
         idPost: +new Date()
-    }
-    const [blogState, setBlogState] = useState<IBlogState>(initialBlogState);
-    const [filteredAndSortedPosts , setFilteredAndSortedPosts] = useState([])
+    });
+    const [filteredAndSortedPosts, setFilteredAndSortedPosts] = useState([])
     const newLocalBlogItem = {
         inputSearch: blogState.inputSearch,
         sortABC: blogState.sortABC,
@@ -48,8 +47,8 @@ const FormBlog = () => {
     }, []);
 
     useEffect(() => {
-        setFilteredAndSortedPosts(saveAndFilterToLocalStorageBlogPosts())
-    }, [blogState.inputSearch, blogState.sortDate, blogState.sortABC , blogState.posts]);
+        setFilteredAndSortedPosts(filterAndSaveToLocalStorageBlogPosts())
+    }, [blogState.inputSearch, blogState.sortDate, blogState.sortABC, blogState.posts]);
 
     const handleDeleteBlogPost = (id: number) => {
         const newPosts = blogState.posts.filter(post => post['id'] !== id) as []
@@ -58,7 +57,7 @@ const FormBlog = () => {
         localStorage.removeItem(JSON.stringify(newLocalBlogItem))
     }
 
-    const filterAndSortBlogPosts = (state : IBlogState) => {
+    const filterAndSortBlogPosts = (state: IBlogState) => {
         let filterAndSortPosts = state.posts.filter(item => item['title'].toLocaleLowerCase().includes(state.inputSearch.toLocaleLowerCase()))
 
         if (state.sortDate === 'abc') {
@@ -76,14 +75,14 @@ const FormBlog = () => {
         console.log('use filter')
         return filterAndSortPosts
     }
-        // TODO поменять навзание на filterAndSaveToLocalStorageBlogPosts
-    const saveAndFilterToLocalStorageBlogPosts = () => {
+
+    const filterAndSaveToLocalStorageBlogPosts = () => {
         let posts = []
         let isContains = false
 
-        for(let i=0; i<localStorage.length; i++) {
+        for (let i = 0; i < localStorage.length; i++) {
             let key = localStorage.key(i);
-            if (key ===  JSON.stringify(newLocalBlogItem)) {
+            if (key === JSON.stringify(newLocalBlogItem)) {
                 isContains = true
                 posts = JSON.parse(localStorage.getItem(key) as string)
             }
@@ -93,7 +92,7 @@ const FormBlog = () => {
             posts = filterAndSortBlogPosts(blogState)
             localStorage.setItem(JSON.stringify(newLocalBlogItem), JSON.stringify(posts))
         }
-        localStorage.setItem('localBlogPosts', JSON.stringify(posts) )
+        localStorage.setItem('localBlogPosts', JSON.stringify(posts))
         return posts
     }
 
@@ -103,7 +102,7 @@ const FormBlog = () => {
                 Tell us how you change your life
             </div>
 
-            <FormCreateNewPostBlog propsBlogState={[blogState, setBlogState]} />
+            <FormCreateNewPostBlog propsBlogState={[blogState, setBlogState]}/>
             <SearchCreateFilterBlog propsBlogState={[blogState, setBlogState]}/>
             <PostRenderBlog posts={filteredAndSortedPosts} handleDeleteBlogPost={handleDeleteBlogPost}/>
         </section>

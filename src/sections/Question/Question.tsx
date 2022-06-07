@@ -1,13 +1,13 @@
 import React from 'react';
 import './Question.css'
 
-type QuestionItemProps =  {
-    title : string
+type QuestionItemProps = {
+    title: string
     text: string
     questStyle: string
 }
 
-const QuestionItem = ({title, text , questStyle} :QuestionItemProps ) => {
+const QuestionItem = ({title, text, questStyle}: QuestionItemProps) => {
     return (
         <div className={`question__item ${questStyle}`}>
             <div className="question__item__title">

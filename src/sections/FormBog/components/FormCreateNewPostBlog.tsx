@@ -2,8 +2,8 @@ import React, {FC} from 'react';
 import InputBlog from "./InputBlog";
 import {IBlogState} from "../FromBlog";
 
-interface FormCreateNewPostBlogProps {
-    propsBlogState : [blogState : IBlogState ,setBlogState :  React.Dispatch<React.SetStateAction<IBlogState>> ]
+export interface FormCreateNewPostBlogProps {
+    propsBlogState: [blogState: IBlogState, setBlogState: (blogState: IBlogState) => void]
 }
 
 const FormCreateNewPostBlog: FC<FormCreateNewPostBlogProps> = ({propsBlogState}) => {
