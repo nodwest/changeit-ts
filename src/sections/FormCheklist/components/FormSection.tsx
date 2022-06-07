@@ -16,22 +16,22 @@ interface IValidateName {
 
 const FormSection : FC<IStateIsFormSend> = ({setIsFormSend} ) => {
 
-    const [firstName, setFirstName] = useState({
+    const [firstName, setFirstName] = useState<IStateInputFormSection>({
         value: '',
         errorText: ''
     })
 
-    const [lastName, setLastName] = useState({
+    const [lastName, setLastName] = useState<IStateInputFormSection>({
         value: '',
         errorText: ''
     })
 
-    const [email, setEmail] = useState({
+    const [email, setEmail] = useState<IStateInputFormSection>({
         value: '',
         errorText: ''
     })
 
-    const [dateEvent, setDateEvent] = useState({
+    const [dateEvent, setDateEvent] = useState<IStateInputFormSection>({
         value: '',
         errorText: ''
     })
