@@ -5,9 +5,13 @@ interface IStateIsFormSend  {
     setIsFormSend : (value:boolean)=> void
 }
 
-interface IStateInputBlockCheck {
+interface IStateInputFormSection {
     value : string,
     errorText : string
+}
+
+interface IValidateName {
+    (field : IStateInputFormSection , setValue : (field : IStateInputFormSection) => void) : void
 }
 
 const FormSection : FC<IStateIsFormSend> = ({setIsFormSend} ) => {
@@ -31,8 +35,8 @@ const FormSection : FC<IStateIsFormSend> = ({setIsFormSend} ) => {
         value: '',
         errorText: ''
     })
-
-    const validateName = <T extends IStateInputBlockCheck, R extends Function> (field : T, setValue : R) => {
+    // const validateName = <T extends IStateInputBlockCheck, R extends Function> (field : T, setValue : R) => {
+    const validateName : IValidateName= (field, setValue ) => {
         if (field.value === '') {
             setValue({
                 ...field,
