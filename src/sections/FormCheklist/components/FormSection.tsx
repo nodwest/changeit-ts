@@ -214,7 +214,7 @@ const FormSection : FC<IStateIsFormSend> = ({setIsFormSend} ) => {
             <input className="form__submit background-blue"
                    type="submit"
                    value='Download'
-                   onClick={() => handlerClickSubmit()}
+                   onClick={handlerClickSubmit}
             />
         </form>
     )
