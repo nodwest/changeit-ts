@@ -3,10 +3,10 @@ import {IBlogStatePosts} from "../FromBlog";
 
 interface PostRenderBlogProps {
     posts: IBlogStatePosts[]
-    handleDeleteBlogPost: (id: number) => void
+    handlerDeleteBlogPost: (id: number) => void
 }
 
-const PostRenderBlog: FC<PostRenderBlogProps> = ({posts, handleDeleteBlogPost}) => {
+const PostRenderBlog: FC<PostRenderBlogProps> = ({posts, handlerDeleteBlogPost}) => {
     return (
         <>
             {posts.map(item => {
@@ -18,7 +18,7 @@ const PostRenderBlog: FC<PostRenderBlogProps> = ({posts, handleDeleteBlogPost}) 
                                 {item.title}
                             </div>
 
-                            <div className={'cursor-pointer'} onClick={() => handleDeleteBlogPost(item.id)}>
+                            <div className={'cursor-pointer'} onClick={() => handlerDeleteBlogPost(item.id)}>
                                 ❌
                             </div>
                         </div>

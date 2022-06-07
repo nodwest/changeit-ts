@@ -43,7 +43,7 @@ const FormBlog = () => {
         setFilteredAndSortedPosts(filterAndSaveToLocalStorageBlogPosts())
     }, [blogState.inputSearch, blogState.sortDate, blogState.sortABC, blogState.posts]);
 
-    const handleDeleteBlogPost = (id: number) => {
+    const handlerDeleteBlogPost = (id: number) => {
         const newPosts = blogState.posts.filter(post => post['id'] !== id)
         setBlogState({...blogState, posts: newPosts})
         localStorage.removeItem(JSON.stringify(newLocalBlogItem))
@@ -93,7 +93,7 @@ const FormBlog = () => {
             </div>
             <FormCreateNewPostBlog propsBlogState={[blogState, setBlogState]}/>
             <SearchCreateFilterBlog propsBlogState={[blogState, setBlogState]}/>
-            <PostRenderBlog posts={filteredAndSortedPosts} handleDeleteBlogPost={handleDeleteBlogPost}/>
+            <PostRenderBlog posts={filteredAndSortedPosts} handlerDeleteBlogPost={handlerDeleteBlogPost}/>
         </section>
     );
 };
