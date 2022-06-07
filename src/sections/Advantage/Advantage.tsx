@@ -11,7 +11,6 @@ interface AdvantageItemProps {
 }
 
 const AdvantageItem: FC<AdvantageItemProps> = ({title, subTitle, src}) => {
-
     return (
         <div className="advantage__item">
             <img className="advantage__item__img" src={src}

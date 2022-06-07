@@ -17,21 +17,14 @@ export interface IBlogState {
     inputSearch: string
     sortABC: string | null
     sortDate: string | null
-    title: string
-    text: string
-    idPost: number
 }
 
 const FormBlog = () => {
-
     const [blogState, setBlogState] = useState<IBlogState>({
         posts: [],
         inputSearch: '',
         sortABC: 'abc',
         sortDate: 'abc',
-        title: '',
-        text: '',
-        idPost: +new Date()
     });
     const [filteredAndSortedPosts, setFilteredAndSortedPosts] = useState([])
     const newLocalBlogItem = {

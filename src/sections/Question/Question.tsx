@@ -32,18 +32,18 @@ const Questions = () => {
             title: 'Will my name change instantly after using this service?',
             text: 'No. We can only advise you on how to change your name and equip you with the tools required to go about it.',
             questStyle: 'background-yellow'
-
         },
+
         {
             title: 'What kind of companies do I need to notify?',
             text: 'As well as helping you through the process of how to change your name, NameSwitch makes it easier to identify which organizations and companies you’ll need to notify about your impending name change.',
             questStyle: 'background-white'
         },
+
         {
             title: 'Ask a Question',
             text: '',
             questStyle: 'question__item-blue'
-
         }
 
     ]
