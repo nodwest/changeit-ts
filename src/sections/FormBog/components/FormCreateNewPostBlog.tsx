@@ -14,7 +14,7 @@ interface IInputBlogPostState {
 
 const FormCreateNewPostBlog: FC<FormCreateNewPostBlogProps> = ({propsBlogState}) => {
     const [blogState, setBlogState] = propsBlogState
-    const [inputBlogPost , setInputBlogPost] = useState<IInputBlogPostState>({
+    const [inputBlogPost, setInputBlogPost] = useState<IInputBlogPostState>({
         title: '',
         text: '',
         idPost: +new Date()
@@ -28,9 +28,8 @@ const FormCreateNewPostBlog: FC<FormCreateNewPostBlogProps> = ({propsBlogState})
             date: new Date().toDateString(),
             dateParse: +new Date().getTime()
         }
-
         setBlogState({...blogState, posts: [...blogState.posts, objPostToPushBlogPosts], inputSearch: ''})
-        setInputBlogPost({...inputBlogPost, text: '' , title: '', idPost: inputBlogPost.idPost + 1,})
+        setInputBlogPost({...inputBlogPost, text: '', title: '', idPost: inputBlogPost.idPost + 1,})
     }
 
     return (

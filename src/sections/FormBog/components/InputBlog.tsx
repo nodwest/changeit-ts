@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
 
-interface InputBlog {
+interface InputBlogProps {
     label: string
     placeholder: string
     value: string
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const InputBlog: FC<InputBlog> = (props) => {
+const InputBlog: FC<InputBlogProps> = (props) => {
     const {label, placeholder, value, onChange} = props
     return (
         <div>
