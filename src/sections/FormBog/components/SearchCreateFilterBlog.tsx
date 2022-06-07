@@ -15,7 +15,6 @@ const SearchCreateFilterBlog: FC<SearchCreateFilterBlogProps> = ({propsBlogState
                         placeholder="Search blog for title"
                         value={blogState.inputSearch}
                         onChange={(e) => setBlogState({...blogState, inputSearch: e.target.value})}
-
                     />
                     <button
                         className="blog__setting__el active-focus sort-abc"
